@@ -10,7 +10,6 @@ Url:		http://www.lxde.org
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 Source1:	27%{name}.conf
 Patch0:		lxdm-0.2.0-mdv-customization.patch
-Patch1:		lxdm-0.4.1-ui-src.patch
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	pam-devel
@@ -25,8 +24,7 @@ A lightweight dropped-in replacement for GDM or KDM.
 %prep
 %setup -q
 %patch0 -p0 -b .mdv~
-%patch1 -p0 -b .ui~
-rm data/lxdm.conf
+#rm data/lxdm.conf
 
 %build
 %configure	--disable-consolekit
