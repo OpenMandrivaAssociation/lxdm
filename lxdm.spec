@@ -2,15 +2,14 @@
 
 Summary:	GUI login manager for LXDE
 Name:		lxdm
-Version:	0.4.2
-Release:	0.%{gitdate}.2
+Version:	0.5.3
+Release:	0.%{gitdate}.1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 Source1:	27%{name}.conf
 Patch0:		lxdm-0.2.0-mdv-customization.patch
-Patch1:		lxdm-0.4.1-ui-src.patch
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	pam-devel
@@ -25,15 +24,14 @@ A lightweight dropped-in replacement for GDM or KDM.
 %prep
 %setup -q
 %patch0 -p0 -b .mdv~
-%patch1 -p0 -b .ui~
-rm data/lxdm.conf
+#rm data/lxdm.conf
 
 %build
-%configure2_5x	--disable-consolekit
-%make
+%configure	--disable-consolekit
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # dm conf file
 install -m644 %{SOURCE1} -D %{buildroot}%{_datadir}/X11/dm.d/27%{name}.conf
@@ -53,10 +51,11 @@ install -m644 %{SOURCE1} -D %{buildroot}%{_datadir}/X11/dm.d/27%{name}.conf
 %config(noreplace) %{_datadir}/X11/dm.d/27%{name}.conf
 %{_sysconfdir}/pam.d/*
 %{_libexecdir}/lxdm-greeter-gtk
+%{_libexecdir}/%{name}-greeter-gdk
+%{_libexecdir}/%{name}-greeter-gtk
+%{_libexecdir}/%{name}-numlock
+%{_libexecdir}/%{name}-session
 %{_sbindir}/lxdm*
 %{_datadir}/%{name}
 %{_bindir}/lxdm-config
-%{_libdir}/lxdm-greeter-gdk
-%{_libdir}/lxdm-numlock
 %{_unitdir}/lxdm.service
-
