@@ -54,8 +54,8 @@ install -m644 %{SOURCE1} -D %{buildroot}%{_datadir}/X11/dm.d/27%{name}.conf
 %{_libexecdir}/%{name}-greeter-gdk
 %{_libexecdir}/%{name}-greeter-gtk
 %{_libexecdir}/%{name}-numlock
+%{_libexecdir}/%{name}-session
 %{_sbindir}/lxdm*
 %{_datadir}/%{name}
 %{_bindir}/lxdm-config
 %{_unitdir}/lxdm.service
-
