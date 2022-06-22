@@ -3,7 +3,7 @@
 Summary:	GUI login manager for LXDE
 Name:		lxdm
 Version:	0.5.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://www.lxde.org
