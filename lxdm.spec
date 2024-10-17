@@ -6,7 +6,7 @@ Version:	0.5.3
 Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Url:		http://www.lxde.org
+Url:		https://www.lxde.org
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 Source1:	27%{name}.conf
 Patch0:		lxdm-0.2.0-mdv-customization.patch
