@@ -10,6 +10,11 @@ Url:		https://www.lxde.org
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 Source1:	27%{name}.conf
 Patch0:		lxdm-0.2.0-mdv-customization.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	pam-devel
